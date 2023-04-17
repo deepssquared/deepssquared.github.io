@@ -160,10 +160,49 @@ document.write('<p>Chrome and Firefox in particular offer good Developer Tools a
          </div>
     
 </h3>
-<!-- 
+
 <h2> Question 3</h2>
 <em> Write a function to load the presidents.csv data and display the data as an html table (you may use a cdv parser from any available library, though I encourage you to try the d3 one).</em>
--->
+
+
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
+<div id="tbl_presidents">
+    <table id="myTable"></table>
+
+</div>
+
+
+<script>
+    d3.csv("https://raw.githubusercontent.com/charleyferrari/CUNY_DATA_608/master/module5/data/presidents.csv").then(function(data) {
+    var table = d3.select("#myTable");
+    
+    // Create table header
+    var thead = table.append("thead");
+    var columns = Object.keys(data[0]);
+    var headerRow = thead.append("tr");
+    columns.forEach(function(column) {
+        headerRow.append("th").text(column);
+    });
+    
+    // Create table body
+    var tbody = table.append("tbody");
+    var rows = tbody.selectAll("tr")
+        .data(data)
+        .enter()
+        .append("tr");
+    rows.each(function(row) {
+        var cells = Object.values(row);
+        cells.forEach(function(cell) {
+            d3.select(this).append("td").text(cell);
+        }, this);
+    });
+});
+
+
+// let data = d3.csvParse(fs.readFileSync("https://raw.githubusercontent.com/charleyferrari/CUNY_DATA_608/master/module5/data/presidents.csv"));
+
+</script>
 
 <!-- Presidents Table prints here-->
 
