@@ -6,3 +6,5 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - text: "Projects"
+      href: projects.html

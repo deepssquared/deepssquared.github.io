@@ -1,0 +1,16 @@
+---
+title: "Projects"
+author: "Deepika Dilip"
+date: '2023-05-28'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+* karyoParser | [ResearchGate](https://www.researchgate.net/publication/365816951_Quantitative_Cytogenetic_Analysis_with_karyoParser_Allows_for_More_Precise_Identification_of_Disease_Biology_Clonal_Evolution_and_Etiology_of_Relapse_in_Acute_Myeloid_Leukemia)
+
+* Wearable sensor-based performance status assessment in cancer: A pilot multicenter study from the Alliance for Clinical Trials in Oncology (A19_Pilot2) | [PubMed](https://pubmed.ncbi.nlm.nih.gov/36812616/) | [R Package](https://github.com/JLGlass/fitness) | [R Code](https://github.com/JLGlass/fitness_analysis_code)
+
+* Single Cell ATAC Lineage Deconvolution Reveals Overlapping Subclones in Epigenetically Distinct AML Samples | [ResearchGate](https://www.researchgate.net/publication/356494698_Single_Cell_ATAC_Lineage_Deconvolution_Reveals_Overlapping_Subclones_in_Epigenetically_Distinct_AML_Samples)
