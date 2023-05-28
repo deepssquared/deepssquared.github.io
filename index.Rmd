@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ### About me
-I am an MPH and MS graduate interested in the intersection of data science and medicine. 
+I am an MPH and MS graduate interested in the intersection of data science and medicine
 
 
 ### Select Publications 
