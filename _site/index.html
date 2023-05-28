@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Deepika" />
+
+
+<title>deepssquared.github.io</title>
+
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Deepika</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">deepssquared.github.io</h1>
+<h4 class="author">Deepika</h4>
+
+</div>
+
+
+<div id="about-me" class="section level3">
+<h3>About me</h3>
+<p>I am an MPH and MS graduate interested in the intersection of data
+science and medicine.</p>
+</div>
+<div id="select-publications" class="section level3">
+<h3>Select Publications</h3>
+<div id="gender-based-violence" class="section level4">
+<h4>Gender-Based Violence</h4>
+<ul>
+<li>#MeToo in South Korea: Public Health Meets a Global Movement | <a
+href="https://pubmed.ncbi.nlm.nih.gov/35862888/">PubMed</a></li>
+<li>Sexual Violence and Mental Health Among College Students in the Era
+of #MeToo | <a
+href="https://www.researchgate.net/publication/345702710_Sexual_Violence_and_Mental_Health_Among_College_Students_in_the_Era_of_MeToo">ResearchGate</a></li>
+</ul>
+</div>
+<div id="covid-19" class="section level4">
+<h4>COVID-19</h4>
+<ul>
+<li>Rapid Scaling Up of Telehealth Treatment for Tobacco-Dependent
+Cancer Patients During the COVID-19 Outbreak in New York City | <a
+href="https://www.researchgate.net/publication/342854047_Rapid_Scaling_Up_of_Telehealth_Treatment_for_Tobacco-Dependent_Cancer_Patients_During_the_COVID-19_Outbreak_in_New_York_City">ResearchGate</a></li>
+<li>The first 20 months of the COVID-19 pandemic: Mortality, intubation
+and ICU rates among 104,590 patients hospitalized at 21 United States
+health systems | <a
+href="https://pubmed.ncbi.nlm.nih.gov/36170336/">PubMed</a></li>
+<li>Relations of Current and Past Cancer with Severe Outcomes among
+104,590 Hospitalized COVID-19 Patients: The COVID EHR Cohort at the
+University of Wisconsin | <a
+href="https://www.researchgate.net/publication/362717637_Relations_of_Current_and_Past_Cancer_with_Severe_Outcomes_among_104590_Hospitalized_COVID-19_Patients_The_COVID_EHR_Cohort_at_the_University_of_Wisconsin">ResearchGate</a></li>
+<li>Smoking Status, Nicotine Medication, Vaccination, and COVID-19
+Hospital Outcomes: Findings from the COVID EHR Cohort at the University
+of Wisconsin (CEC-UW) Study | <a
+href="https://www.researchgate.net/publication/363361565_Smoking_Status_Nicotine_Medication_Vaccination_and_COVID-19_Hospital_Outcomes_Findings_from_the_COVID_EHR_Cohort_at_the_University_of_Wisconsin_CEC-UW_Study">ResearchGate</a></li>
+</ul>
+</div>
+<div id="hematology" class="section level4">
+<h4>Hematology</h4>
+<ul>
+<li>Quantitative Cytogenetic Analysis with karyoParser Allows for More
+Precise Identification of Disease Biology, Clonal Evolution, and
+Etiology of Relapse in Acute Myeloid Leukemia | <a
+href="https://www.researchgate.net/publication/365816951_Quantitative_Cytogenetic_Analysis_with_karyoParser_Allows_for_More_Precise_Identification_of_Disease_Biology_Clonal_Evolution_and_Etiology_of_Relapse_in_Acute_Myeloid_Leukemia">ResearchGate</a></li>
+<li>Wearable sensor-based performance status assessment in cancer: A
+pilot multicenter study from the Alliance for Clinical Trials in
+Oncology (A19_Pilot2) | <a
+href="https://pubmed.ncbi.nlm.nih.gov/36812616/">PubMed</a> | <a
+href="https://github.com/JLGlass/fitness">R Package</a> | <a
+href="https://github.com/JLGlass/fitness_analysis_code">R Code</a></li>
+<li>Single Cell ATAC Lineage Deconvolution Reveals Overlapping Subclones
+in Epigenetically Distinct AML Samples | <a
+href="https://www.researchgate.net/publication/356494698_Single_Cell_ATAC_Lineage_Deconvolution_Reveals_Overlapping_Subclones_in_Epigenetically_Distinct_AML_Samples">ResearchGate</a></li>
+</ul>
+</div>
+</div>
+<div id="academic-projects" class="section level3">
+<h3>Academic Projects</h3>
+<div id="data-science-master-of-science" class="section level4">
+<h4>Data Science, Master of Science</h4>
+<ul>
+<li>Predicting Progression of Endometrial Cancer | <a
+href="https://nbviewer.org/github/deepssquared/CUNY.MDS/blob/main/DATA602/DATA%20602%20FINAL.ipynb">nbViewer</a>
+| <a
+href="https://github.com/deepssquared/CUNY.MDS/blob/main/DATA602/DATA%20602%20FINAL.ipynb">Markdown</a></li>
+<li>COVID-19 Vaccine Clinic Simulation | <a
+href="https://nbviewer.org/github/deepssquared/CUNY.MDS/blob/main/DATA604/FINAL/FINAL_SUBMISSION.ipynb">nbViewer</a>
+| <a
+href="https://github.com/deepssquared/CUNY.MDS/blob/main/DATA604/FINAL/FINAL_SUBMISSION.ipynb">Markdown</a></li>
+<li>The opioid epidemic in surveillance &amp; survey data | <a
+href="https://rpubs.com/ddilip94/DATA607FINAL">Markdown</a></li>
+</ul>
+</div>
+<div id="epidemiology-master-of-public-health" class="section level4">
+<h4>Epidemiology, Master of Public Health</h4>
+<ul>
+<li>The Impact of Caste on Health | <a
+href="https://github.com/deepssquared/caste-health-india">Markdown</a> |
+<a href="https://deepssquared.github.io/caste-health-india/">GitHub
+Page</a></li>
+<li>Predicting Gender from Risk-Seeking Behaviors | <a
+href="https://github.com/deepssquared/DSII_FinalProject">Markdown</a> |
+<a
+href="https://htmlpreview.github.io/?https://github.com/deepssquared/DSII_FinalProject/blob/master/final_report.html">GitHub
+Page</a></li>
+</ul>
+</div>
+<div id="miscellaneous-projects" class="section level4">
+<h4>Miscellaneous Projects</h4>
+<ul>
+<li>Death Rates and US Presidential Voting | <a
+href="https://pubmed.ncbi.nlm.nih.gov/31898122/">PubMed</a></li>
+</ul>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
