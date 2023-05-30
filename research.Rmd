@@ -1,6 +1,5 @@
 ---
 title: "Research"
-author: "Deepika Dilip"
 date: '2023-05-28'
 output: html_document
 ---
